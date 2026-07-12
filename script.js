@@ -1,3 +1,25 @@
+﻿async function loadEditableContent() {
+  try {
+    const response = await fetch(`content.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) return;
+
+    const content = await response.json();
+
+    Object.entries(content).forEach(([key, value]) => {
+      document.querySelectorAll(`[data-i18n="${key}"]`).forEach((element) => {
+        element.textContent = value;
+      });
+
+      document.querySelectorAll(`[data-i18n-html="${key}"]`).forEach((element) => {
+        element.innerHTML = value;
+      });
+    });
+  } catch (error) {
+    console.warn("content.json was not loaded; using the text inside index.html.", error);
+  }
+}
+
+loadEditableContent();
 const revealItems = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
@@ -38,3 +60,4 @@ if (languageToggle) {
     });
   });
 }
+
