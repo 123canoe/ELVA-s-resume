@@ -686,3 +686,274 @@ h3 {
     display: none;
   }
 }
+
+/* Responsive polish: better phone and narrow tablet layout */
+body {
+  overflow-x: hidden;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+a,
+span,
+strong,
+small,
+li {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .section-shell {
+    width: min(100% - 1.25rem, 1120px);
+  }
+
+  .site-header {
+    position: sticky;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.72rem 0.75rem;
+  }
+
+  .wordmark {
+    min-width: 0;
+    font-size: 1.08rem;
+    white-space: nowrap;
+  }
+
+  .lang-toggle {
+    padding: 0.36rem 0.62rem;
+    font-size: 0.86rem;
+  }
+
+  .main-nav {
+    grid-column: 1 / -1;
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.45rem;
+    overflow-x: auto;
+    padding-bottom: 0.15rem;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a {
+    flex: 0 0 auto;
+    padding: 0.42rem 0.68rem;
+    font-size: 0.86rem;
+    white-space: nowrap;
+  }
+
+  .hero {
+    padding: 2rem 0 1.2rem;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 16vw, 4.6rem);
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 8vw, 2.35rem);
+    line-height: 1.18;
+  }
+
+  h3 {
+    font-size: 1.18rem;
+    line-height: 1.34;
+  }
+
+  .hero-intro {
+    font-size: 0.98rem;
+  }
+
+  .hero-actions,
+  .contact-actions {
+    align-items: stretch;
+  }
+
+  .button,
+  .contact-phone {
+    justify-content: center;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.68rem 0.9rem;
+    text-align: center;
+  }
+
+  .hero-photo {
+    min-height: 260px;
+    border-radius: 22px;
+  }
+
+  .portrait-card,
+  .project-promo-image {
+    padding: 1.2rem;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .metric {
+    padding: 0.95rem;
+  }
+
+  .metric strong {
+    font-size: 2rem;
+  }
+
+  .metric-wide {
+    grid-column: 1 / -1;
+  }
+
+  .section-map {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    padding: 0.8rem 0 2rem;
+  }
+
+  .section-map a {
+    min-height: 5.25rem;
+    padding: 0.85rem;
+  }
+
+  .section-map small,
+  .project-type,
+  .section-kicker,
+  .card-label {
+    font-size: 0.72rem;
+  }
+
+  .section-heading {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .project {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .project-topline {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .project-promo-image {
+    min-height: 180px;
+    border-radius: 16px;
+  }
+
+  .product-card,
+  .principle {
+    padding: 1rem;
+  }
+
+  .card-symbol,
+  .project-visual,
+  .data-bars,
+  .channel-map {
+    border-radius: 14px;
+    padding: 0.85rem;
+  }
+
+  .tag-row,
+  .capability-list {
+    gap: 0.45rem;
+  }
+
+  .tag-row span,
+  .capability-list span,
+  .capability-list strong,
+  .method-visual span {
+    border-radius: 12px;
+    padding: 0.38rem 0.58rem;
+    font-size: 0.82rem;
+  }
+
+  .timeline-row {
+    gap: 0.45rem;
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .timeline-main h3,
+  .timeline-main p {
+    margin-bottom: 0.25rem;
+  }
+
+  .experience-section,
+  .contact-section,
+  .method-section {
+    margin-top: 2.25rem;
+    padding: 2.5rem 0;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    padding: 1rem 0.75rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .section-shell {
+    width: min(100% - 1rem, 1120px);
+  }
+
+  .site-header {
+    padding-inline: 0.5rem;
+  }
+
+  .hero {
+    padding-top: 1.45rem;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 15vw, 3.45rem);
+  }
+
+  .metrics,
+  .section-map {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo {
+    min-height: 220px;
+  }
+
+  .project,
+  .product-card,
+  .metric,
+  .principle,
+  .timeline-row {
+    border-radius: 14px;
+  }
+
+  .method-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .qda-mark,
+  .map-core {
+    width: 5.35rem;
+    height: 5.35rem;
+    font-size: 0.85rem;
+  }
+}
