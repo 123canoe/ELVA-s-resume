@@ -957,3 +957,51 @@ li {
     font-size: 0.85rem;
   }
 }
+
+/* Real image replacements */
+.hero-photo {
+  background: #f8f4ea;
+}
+
+.profile-photo,
+.project-promo-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-photo {
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.project-promo-image {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #f8f4ea;
+}
+
+.project-promo-image img {
+  min-height: 260px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 720px) {
+  .profile-photo {
+    min-height: 260px;
+    object-position: center 24%;
+  }
+
+  .project-promo-image img {
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 420px) {
+  .profile-photo {
+    min-height: 220px;
+  }
+}
